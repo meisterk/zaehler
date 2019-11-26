@@ -1,5 +1,7 @@
+import { Model } from "./model.js";
+
 export class Presenter {
     constructor() {
-        console.log('Test');
+        this.model = new Model();
     }
 }
