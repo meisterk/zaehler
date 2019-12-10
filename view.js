@@ -1,14 +1,24 @@
 export class View {
     constructor(presenter) {
+        this._getIDsFromHTML();
+        this._delegateEventsToPresenter(presenter);
+    }
 
-        this.buttonHochzaehlen = document.getElementById('hochzaehlen');
-        this.buttonReset = document.getElementById('reset');
-        this.pAusgabe = document.getElementById('ausgabe');
+    setOutput(text) {
+        this._pAusgabe.innerText = text;
+    }
 
-        this.buttonHochzaehlen.addEventListener('click', function () {
+    _getIDsFromHTML() {
+        this._buttonHochzaehlen = document.getElementById('hochzaehlen');
+        this._buttonReset = document.getElementById('reset');
+        this._pAusgabe = document.getElementById('ausgabe');
+    }
+
+    _delegateEventsToPresenter(presenter) {
+        this._buttonHochzaehlen.addEventListener('click', function () {
             presenter.buttonHochzaehlenClick();
         });
-        this.buttonReset.addEventListener('click', function () {
+        this._buttonReset.addEventListener('click', function () {
             presenter.buttonResetClick();
         });
     }
