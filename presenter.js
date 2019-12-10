@@ -8,10 +8,17 @@ export class Presenter {
     }
 
     buttonHochzaehlenClick() {
-        console.log("hochzaehlen");
+        this.model.hochzaehlen();
+        this._updateNumber();
     }
 
     buttonResetClick() {
-        console.log("reset");
+        this.model.reset();
+        this._updateNumber();
+    }
+
+    _updateNumber() {
+        const count = this.model.getZahl();
+        this.view.setOutput('Zahl: ' + count);
     }
 }
