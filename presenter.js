@@ -17,6 +17,12 @@ export class Presenter {
         this._updateNumber();
     }
 
+    buttonVervielfachenClick() {
+        const faktor = this.view.getInputFaktor();
+        this.model.vervielfachen(faktor);
+        this._updateNumber();
+    }
+
     _updateNumber() {
         const count = this.model.getZahl();
         this.view.setOutput('Zahl: ' + count);

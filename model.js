@@ -7,6 +7,10 @@ export class Model {
         this._zahl++;
     }
 
+    vervielfachen(faktor) {
+        this._zahl = this._zahl * faktor;
+    }
+
     reset() {
         this._zahl = 0;
     }
